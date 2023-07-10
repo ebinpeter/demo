@@ -1,0 +1,148 @@
+import 'package:flutter/material.dart';
+
+class onepage extends StatefulWidget {
+  const onepage({super.key});
+
+  @override
+  State<onepage> createState() => _onepageState();
+}
+
+class _onepageState extends State<onepage> {
+  var imageee = [
+    "Manoj Naik -  jamnagar \nwon PHILIPS hair trimmer \nworth  Rs 1600\non 7/06/2023 ",
+    "Rekha - Thiruwalla \n won HAVELLS hair driver \n worth Rs 1300 \n 12/06/2023",
+    "Unknown -  Ghorakpur \n won CAMPUS runnig shoe \n worth  Rs 1540 \n on 15/06/2023",
+    "Manoj Naik -  jamnagar \n won PHILIPS hair trimmer \n worth  Rs 1600\n on 7/06/2023 ",
+    "Rekha - Thiruwalla \n won HAVELLS hair driver \n worth Rs 1300 \n 12/06/2023",
+    "Unknown -  Ghorakpur \n won CAMPUS runnig shoe \n worth  Rs 1540 \n on 15/06/2023"
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SafeArea(
+          child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 400),
+            child: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                )),
+          ),
+          Container(
+            child: const Text(
+              "LEADER BOARD",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Container(
+            color: Colors.black,
+            height: 220,
+            width: 450,
+            child: const Stack(children: [
+              Padding(
+                padding: EdgeInsets.only(left: 30, top: 100),
+                child: CircleAvatar(
+                  backgroundColor: Colors.grey,
+                  radius: 50,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.black,
+                    radius: 30,
+                    child: CircleAvatar(
+                      radius: 26,
+                      backgroundImage: NetworkImage(
+                          "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 100, bottom: 10),
+                child: CircleAvatar(
+                  backgroundColor: Colors.grey,
+                  radius: 90,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.black,
+                    radius: 55,
+                    child: CircleAvatar(
+                      radius: 50,
+                      backgroundImage: NetworkImage(
+                          "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 250, top: 50),
+                child: CircleAvatar(
+                  backgroundColor: Colors.grey,
+                  radius: 90,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.black,
+                    radius: 45,
+                    child: CircleAvatar(
+                      radius: 40,
+                      backgroundImage: NetworkImage(
+                          "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"),
+                    ),
+                  ),
+                ),
+              )
+            ]),
+          ),
+          Container(
+            height: 357,
+            width: 500,
+            child: SingleChildScrollView(
+              child: Column(
+                children: List.generate(
+                    4,
+                    (index) => SizedBox(
+                          height: 100,
+                          width: 360,
+                          child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              color: Colors.blueGrey[300],
+                              child: Stack(
+                                children: [
+                                  const Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            EdgeInsets.only(right: 230, top: 5),
+                                        child: CircleAvatar(
+                                          radius: 40,
+                                          backgroundImage: NetworkImage(
+                                              "https://i1.wp.com/w7.pngwing.com/pngs/435/912/png-transparent-power-user-computer-icons-no-1-miscellaneous-face-monochrome.png"),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 90, top: 10),
+                                    child: Text(imageee[index]),
+                                  )
+                                ],
+                              )),
+                        )),
+              ),
+            ),
+          )
+        ],
+      )),
+    );
+  }
+}
