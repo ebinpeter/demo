@@ -1,0 +1,125 @@
+import 'package:flutter/material.dart';
+import 'package:icons_plus/icons_plus.dart';
+
+class comtpage extends StatefulWidget {
+  const comtpage({super.key});
+
+  @override
+  State<comtpage> createState() => _comtpageState();
+}
+
+class _comtpageState extends State<comtpage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 10, left: 10),
+                child: Text(
+                  "SHARE & WIN",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                ),
+              ),
+              const SizedBox(
+                height: 100,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 30),
+                child: Container(
+                  height: 205,
+                  width: 360,
+                  decoration: BoxDecoration(
+                      color: Colors.blueGrey[300],
+                      borderRadius: BorderRadius.circular(20)),
+                  child: const Column(
+                    children: [
+                      Text(
+                        "Add your Comment",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(30.0),
+                        child: TextField(
+                            decoration: InputDecoration(
+                                fillColor: Colors.white,
+                                filled: true,
+                                contentPadding: EdgeInsets.symmetric(
+                                  vertical: 50,
+                                ),
+                                border: OutlineInputBorder(),
+                                hintText: "comment",
+                                hintStyle: TextStyle(color: Colors.black))),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Container(
+                color: Colors.green[300],
+                width: 200,
+                height: 40,
+                child: Row(children: [
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      "ok",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20, left: 100),
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          EvaIcons.arrow_forward,
+                          color: Colors.black,
+                        )),
+                  )
+                ]),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                color: Colors.green[300],
+                width: 200,
+                height: 50,
+                child: Row(children: [
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      "Skip",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20, left: 78),
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          EvaIcons.arrow_forward,
+                          color: Colors.black,
+                        )),
+                  )
+                ]),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
