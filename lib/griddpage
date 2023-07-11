@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+import 'package:uidemos_one/sceens/second.dart';
+
+class Mypage extends StatefulWidget {
+  const Mypage({super.key});
+
+  @override
+  State<Mypage> createState() => _MypageState();
+}
+
+class _MypageState extends State<Mypage> {
+  @override
+  Widget build(BuildContext context) {
+    var arrCor = [
+      "asset/Group 9 (1).png",
+      "asset/Group 10 (1).png",
+      "asset/Group 11.png",
+      "asset/Group 12.png",
+      "asset/Group 9 (2).png",
+      "asset/Group 7.png",
+    ];
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: GridView.builder(
+          itemCount: arrCor.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: InkWell(onTap: () {
+                Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Seconpage()));
+              },
+                child: Container(
+                  decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.black, Colors.greenAccent],
+                          stops: [0.1, 0.8])),
+                  child: Stack(children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset(arrCor[index]),
+                    )
+                  ]),
+                ),
+              ),
+            );
+          }),
+    );
+  }
+}
